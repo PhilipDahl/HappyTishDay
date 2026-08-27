@@ -362,7 +362,7 @@
         <div class="vs">VS</div>
 
         <div class="preview-card">
-          <div class="emoji">💻</div>
+          <div class="emoji">⚡</div>
           <div class="choice-name">Electronic</div>
         </div>
       </div>
@@ -477,17 +477,34 @@
       </div>
 
       <h1>
-        Happy Birthday Tish I hope your day was so amazing!
+        Happy Birthday Tish!
       </h1>
 
       <p class="subtitle">
         Your decision has been made.
         <br><br>
-        Thanks for playing along (:❤️
+        I hope your day was so amazing, Thanks for playing along (:❤️
       </p>
 
       <p>
         Your birthday surprise is officially locked in.
+      </p>
+
+      <div id="sideResult" style="
+        margin-top: 28px;
+        font-size: clamp(1.5rem, 5vw, 2.4rem);
+        font-weight: 900;
+        color: white;
+      ">
+        Result locked in.
+      </div>
+
+      <p style="margin-top: 16px;">
+        Text me whether the left or right side won! ❤️
+      </p>
+
+      <p style="margin-top: 8px; font-size: 0.9rem; color: #9e8aaa;">
+        (Just text me: LEFT or RIGHT 🤭)
       </p>
 
       <div class="secret-hint">
@@ -799,6 +816,13 @@
 
         showScreen("finish");
 
+        document
+          .getElementById("sideResult")
+          .textContent =
+          winner === "Clothing"
+            ? "🏆 LEFT SIDE WON!"
+            : "🏆 RIGHT SIDE WON!";
+
         launchConfetti();
 
       }, 3000);
@@ -949,7 +973,7 @@
         .textContent =
         winner === "Clothing"
           ? "👕"
-          : "💻";
+          : "⚡";
 
 
       document
