@@ -362,8 +362,8 @@
         <div class="vs">VS</div>
 
         <div class="preview-card">
-          <div class="emoji">🎧</div>
-          <div class="choice-name">Headphones</div>
+          <div class="emoji">💻</div>
+          <div class="choice-name">Electronic</div>
         </div>
       </div>
 
@@ -379,7 +379,7 @@
       <h2>⚔️ The Rules</h2>
 
       <div class="rules">
-        <p>You have two choices: <strong>Clothing</strong> or <strong>Headphones</strong>.</p>
+        <p>You have two choices: <strong>Clothing</strong> or <strong>Electronic</strong>.</p>
 
         <p>When the battle begins, keep clicking whichever option you're feeling until the timer runs out.</p>
 
@@ -438,9 +438,9 @@
           VS
         </div>
 
-        <button class="choice" id="headphones">
-          <div class="emoji">🎧</div>
-          <div class="choice-name">Headphones</div>
+        <button class="choice" id="electronic">
+          <div class="emoji">💻</div>
+          <div class="choice-name">Electronic</div>
           <div>CLICK!</div>
         </button>
 
@@ -530,8 +530,8 @@
         </div>
 
         <div>
-          Headphones clicks:
-          <strong id="headphoneClicks">0</strong>
+          Electronic clicks:
+          <strong id="electronicClicks">0</strong>
         </div>
 
         <div>
@@ -574,7 +574,7 @@
 
 
     let clothingClicks = 0;
-    let headphoneClicks = 0;
+    let electronicClicks = 0;
 
     let winner = "";
 
@@ -750,15 +750,15 @@
 
 
     document
-      .getElementById("headphones")
+      .getElementById("electronic")
       .addEventListener("click", () => {
 
         if (!gameRunning) return;
 
-        headphoneClicks++;
+        electronicClicks++;
 
         animateChoice(
-          document.getElementById("headphones")
+          document.getElementById("electronic")
         );
 
         randomMessage();
@@ -814,10 +814,10 @@
         Example:
 
         Clothing = 15 clicks
-        Headphones = 5 clicks
+        Electronic = 5 clicks
 
         Clothing has roughly a 75% chance.
-        Headphones has roughly a 25% chance.
+        Electronic has roughly a 25% chance.
 
         Neither percentage is shown to the player.
       */
@@ -832,13 +832,13 @@
       const clothingWeight =
         clothingClicks + 1;
 
-      const headphoneWeight =
-        headphoneClicks + 1;
+      const electronicWeight =
+        electronicClicks + 1;
 
 
       const totalWeight =
         clothingWeight +
-        headphoneWeight;
+        electronicWeight;
 
 
       const randomNumber =
@@ -857,7 +857,7 @@
 
       else {
 
-        winner = "Headphones";
+        winner = "Electronic";
 
       }
 
@@ -949,7 +949,7 @@
         .textContent =
         winner === "Clothing"
           ? "👕"
-          : "🎧";
+          : "💻";
 
 
       document
@@ -959,16 +959,16 @@
 
 
       document
-        .getElementById("headphoneClicks")
+        .getElementById("electronicClicks")
         .textContent =
-        headphoneClicks;
+        electronicClicks;
 
 
       document
         .getElementById("totalClicks")
         .textContent =
         clothingClicks +
-        headphoneClicks;
+        electronicClicks;
 
 
       document
